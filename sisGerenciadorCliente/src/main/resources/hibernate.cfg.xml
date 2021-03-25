@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- Configuração com o banco de dados SQLServer
+        <property name="hibernate.connection.driver_class">net.sourceforge.jtds.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:jtds:sqlserver://localhost/nome_bd</property>
+        <property name="hibernate.connection.username">sa</property>
+        <property name="hibernate.connection.password">senha</property>-->
+      
+        <!-- Configuração de conexão com o banco PostgreSQL -->
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/bdUsuario</property>
+        <property name="hibernate.connection.username">postgres</property>
+        <property name="hibernate.connection.password">1234567</property>
+        <!-- Pool de Conexões -->
+        <property name="connection.pool_size">1</property>
+        <!-- SQL dialect -->
+        <!--<property name="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</property> -->
+        <!-- PostgreSQL dialect -->
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+        <!-- Gerenciamento do Contexto das Sessões -->
+        <property name="current_session_context_class">thread</property>
+        <!-- Mostra as SQLs geradas -->
+        <property name="show_sql">true</property>
+        <!-- Cria as tabelas do banco de dados -->
+        <property name="hibernate.hbm2ddl.auto">create</property>
+        <!-- <property name="hdm2dd1.auto">validate</property> -->
+        <!-- Mapeamente das entidades -->
+        <mapping class="br.com.lm.model.Cliente"/>
+        <mapping class="br.com.lm.model.Agencia"/>
+        <mapping class="br.com.lm.model.ContaCorrente"/>  
+        <!-- <mapping class="br.com.apf.gerenciadorfinanceiro.dominio.Usuario"/>
+        <mapping class="br.com.apf.gerenciadorfinanceiro.dominio.Fabricante"/> -->     
+      
+    </session-factory>
+</hibernate-configuration>
